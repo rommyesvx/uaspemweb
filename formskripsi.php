@@ -17,24 +17,22 @@
 				</a>
 				<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
 					<li class="nav-item">
-						<a href="#" class="nav-link align-middle px-0">
+						<a href="krs.php" class="nav-link align-middle px-0">
 							<i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Kartu Rencana Studi</span>
 						</a>
 					</li>
-					<li>
-						<a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-							<i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Transkrip</span> 
+					<li class="nav-item">
+						<a href="transkrip.php" class="nav-link align-middle px-0">
+							<i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Transkrip</span>
 						</a>
-						<ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-						</ul>
 					</li>
 					<li>
-						<a href="#" class="nav-link px-0 align-middle">
+						<a href="berkas.php" class="nav-link px-0 align-middle">
 							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Berkas</span> 
 						</a>
 					</li>
 					<li>
-						<a href="ok" class="nav-link px-0 align-middle">
+						<a href="presensi.php" class="nav-link px-0 align-middle">
 							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Presensi</span> 
 						</a>
 					</li>

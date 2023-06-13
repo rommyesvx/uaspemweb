@@ -49,6 +49,7 @@ JOIN matakuliah ON matakuliah.IdMatakuliah = ips.IdMatakuliah WHERE ips.IdMahasi
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
+              <h1 class="m-0">Dashboard</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -66,57 +67,31 @@ JOIN matakuliah ON matakuliah.IdMatakuliah = ips.IdMatakuliah WHERE ips.IdMahasi
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
           <!-- Main row -->
-          <h3>Pengajuan Berkas</h3>
-    			<div class="form-group">
-    				<div class="form-row">
-    					<div class="col mt-3" style="margin-left: 100px; margin-right: 100px;">
-    						<div class="row border-dark border w-100" onclick="location.href='suratpengantar.php'" style="border-width: 1px !important; border-radius: 20px; padding-bottom: 20px;">
-    							<div class="col-sm-8 pl-3 mt-3 mb-3">
-    								<p class="font-weight-bold" id="tes">
-    									Surat Pengantar <br><small class="font-weight-light">Klik untuk melanjutkan pemilihan kategori pengajuan surat</small>
-    									<a href="suratpengantar.php" class="stretched-link"></a>
-    								</p>
-    							</div>
-    							<div class="col-sm-4 text-right mt-3">
-    								<img src="images/file.png" style="width: 30%;">
-    							</div>
-    						</div>
-    						<div class="row border-dark border mr-3 mt-4 w-100" onclick="changeClass(this)" style="border-width: 1px !important; border-radius: 20px; padding-bottom: 20px;">
-    							<div class="col-sm-8 pl-3 mt-3 mb-3">
-    								<p class="font-weight-bold">
-    									Surat Keterangan<br><small class="font-weight-light">Klik untuk melanjutkan pemilihan kategori pengajuan surat</small>
-    									<a href="suratketerangan.php" class="stretched-link"></a>
-    								</p>
-    							</div>
-    							<div class="col-sm-4 text-right mt-3">
-    								<img src="images/documents.png" style="width: 30%;">
-    							</div>
-    						</div>
-    						<div class="row border-dark border mr-3 mt-4 w-100" onclick="changeClass(this)" style="border-width: 1px !important; border-radius: 20px; padding-bottom: 20px;">
-    							<div class="col-sm-8 pl-3 mt-3 mb-3">
-    								<p class="font-weight-bold">
-    									Surat Rekomendasi<br><small class="font-weight-light">Klik untuk melanjutkan pemilihan kategori pengajuan surat</small>
-    									<a href="suratrekomendasi" class="stretched-link"></a>
-    								</p>
-    							</div>
-    							<div class="col-sm-4 text-right mt-3">
-    								<img src="images/folder.png" style="width: 30%;">
-    							</div>
-    						</div>
-    						<div class="row border-dark border mr-3 mt-4 w-100" onclick="changeClass(this)" style="border-width: 1px !important; border-radius: 20px; padding-bottom: 20px;">
-    							<div class="col-sm-8 pl-3 mt-3 mb-3">
-    								<p class="font-weight-bold">
-    									Surat Lainnya<br><small class="font-weight-light">Klik untuk melanjutkan pemilihan kategori pengajuan surat</small>
-    									<a href="suratlainnya.php" class="stretched-link"></a>
-    								</p>
-    							</div>
-    							<div class="col-sm-4 text-right mt-3">
-    								<img src="images/paperwork.png" style="width: 30%;">
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
+          <h4>Transkrip</h4>
+  					<table class="table table-bordered table-striped">
+  					<tr>
+  						<th>Nomor</th>
+  						<th>Mata Kuliah</th>
+  						<th>Semester</th>
+  						<th>SKS</th>
+  						<th>IP</th>
+  					</tr>
+  					<?php if(mysqli_num_rows($query)>0){ ?>
+  						<?php
+  						$no = 1;
+  						while($data = mysqli_fetch_array($query)){
+  							?>
+  							<tr>
+  								<td><?php echo $no ?></td>
+  								<td><?php echo $data["NamaMataKuliah"]; ?></td>
+  								<td><?php echo $data["Semester"]; ?></td>
+  								<td><?php echo $data["SKS"]; ?></td>
+  								<td><?php echo $data["IPS"]; ?></td>
+  							</tr>
+  							<?php $no++; } ?>
+  						<?php } ?>
+  					</table>
+  					<a href="action/exportpdf_transkrip.php"><button type="button" class="btn btn-primary">Export Transkrip</button></a>
           <!-- /.row (main row) -->
         </div>
         <!-- /.container-fluid -->

@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +39,7 @@
 	<title></title>
 </head>
 <body>
+	
 	<div class="row flex-nowrap">
 		<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" id="sidebar">
 			<div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -48,91 +52,92 @@
 							<i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Kartu Rencana Studi</span>
 						</a>
 					</li>
+					<li class="nav-item">
+						<a href="transkrip.php" class="nav-link align-middle px-0">
+							<i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Transkrip</span>
+						</a>
+					</li>
 					<li>
-						<a href="transkrip.php" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-							<i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Transkrip</span> </a>
-							<ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-							</ul>
-						</li>
+						<a href="berkas.php" class="nav-link px-0 align-middle">
+							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Berkas</span> 
+						</a>
+					</li>
+					<li>
+						<a href="presensi.php" class="nav-link px-0 align-middle">
+							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Presensi</span> 
+						</a>
+					</li>
+				</ul>
+				<hr>
+				<div class="dropdown pb-4">
+					<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="d-none d-sm-inline mx-1">Nama Akun</span>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+						<li><a class="dropdown-item" href="#">New project...</a></li>
+						<li><a class="dropdown-item" href="#">Settings</a></li>
+						<li><a class="dropdown-item" href="#">Profile</a></li>
 						<li>
-							<a href="berkas.php" class="nav-link px-0 align-middle">
-								<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Berkas</span> </a>
-							</li>
-							<li>
-								<a href="presensi.php" class="nav-link px-0 align-middle">
-									<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Presensi</span> </a>
-								</li>
-							</ul>
-							<hr>
-							<div class="dropdown pb-4">
-								<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-									<span class="d-none d-sm-inline mx-1">Nama Akun</span>
-								</a>
-								<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-									<li><a class="dropdown-item" href="#">New project...</a></li>
-									<li><a class="dropdown-item" href="#">Settings</a></li>
-									<li><a class="dropdown-item" href="#">Profile</a></li>
-									<li>
-										<hr class="dropdown-divider">
-									</li>
-									<li><a class="dropdown-item" href="#">Sign out</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<img src="images/coverupn.jpg" class="img-thumbnail" style="width: 100%;">
-						<div class="tekstengah"><h3>Sistem Informasi Akademik Mahasiswa <br>FASILKOM</h3></div>
-						<div class="row">
-							<div class="cardanu" style="background-color: lightgray;">
-								<div class="row mt-2 justify-content-center" style="background-color: lightgray;">
-									<div class="card mt-3" style="width:90%">
-										<div class="card-body">
-											<div class="row">
-												<div class="col align-self-start">
-													<h5 class="card-title">Data Diri</h5>
-													<p class="card-text ms-3">Nama</p>
-													<p class="card-text ms-3">{Nama}</p>
-													<p class="card-text ms-3">NPM</p>
-													<p class="card-text ms-3">[NPM]</p>
-													<p class="card-text ms-3">Alamat</p>
-													<p class="card-text ms-3">[alamat]</p>
-												</div>
-												<div class="col">
-												</div>
-												<div class="col">
-												</div>
-											</div>
-										</div>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#">Sign out</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<img src="images/coverupn.jpg" class="img-thumbnail" style="width: 100%;">
+			<div class="tekstengah"><h3>Sistem Informasi Akademik Mahasiswa <br>FASILKOM</h3></div>
+			<div class="row">
+				<div class="cardanu" style="background-color: lightgray;">
+					<div class="row mt-2 justify-content-center" style="background-color: lightgray;">
+						<div class="card mt-3" style="width:90%">
+							<div class="card-body">
+								<div class="row">
+									<div class="col align-self-start">
+										<h5 class="card-title">Data Diri</h5>
+										<p class="card-text ms-3">Nama</p>
+										<p class="card-text ms-3"><?php echo $_SESSION['nama'];?></p>
+										<p class="card-text ms-3">NPM</p>
+										<p class="card-text ms-3"><?php echo $_SESSION['npm']; ?></p>
+										<p class="card-text ms-3">Alamat</p>
+										<p class="card-text ms-3"><?php echo $_SESSION['jeniskelamin']; ?></p>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="cardanu" style="background-color: lightgray;">
-								<div class="row mt-2 justify-content-center" style="background-color: lightgray;">
-									<div class="card mt-3" style="width:90%">
-										<div class="card-body">
-											<div class="row">
-												<div class="col align-self-start">
-													<h5 class="card-title">Data Akademik</h5>
-													<p class="card-text ms-3">Fakultas</p>
-													<p class="card-text ms-3">Ilmu Komputer</p>
-													<p class="card-text ms-3">Program Studi</p>
-													<p class="card-text ms-3">Sistem Informasi</p>
-													<p class="card-text ms-3">Dekan Ilmu Komputer</p>
-													<p class="card-text ms-3">Dr. Ir. Novirina Hendrasarie, M.T.</p>
-												</div>
-												<div class="col">
-												</div>
-												<div class="col">
-												</div>
-											</div>
-										</div>
+									<div class="col">
+									</div>
+									<div class="col">
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</body>
-				</html>
+				</div>
+			</div>
+			<div class="row">
+				<div class="cardanu" style="background-color: lightgray;">
+					<div class="row mt-2 justify-content-center" style="background-color: lightgray;">
+						<div class="card mt-3" style="width:90%">
+							<div class="card-body">
+								<div class="row">
+									<div class="col align-self-start">
+										<h5 class="card-title">Data Akademik</h5>
+										<p class="card-text ms-3">Fakultas</p>
+										<p class="card-text ms-3">Ilmu Komputer</p>
+										<p class="card-text ms-3">Program Studi</p>
+										<p class="card-text ms-3">Sistem Informasi</p>
+										<p class="card-text ms-3">Dekan Ilmu Komputer</p>
+										<p class="card-text ms-3">Dr. Ir. Novirina Hendrasarie, M.T.</p>
+									</div>
+									<div class="col">
+									</div>
+									<div class="col">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>

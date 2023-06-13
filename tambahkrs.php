@@ -28,12 +28,12 @@
 					</li>
 					<li>
 						<a href="berkas.php" class="nav-link px-0 align-middle">
-							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Berkas</span> 
+							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Berkas</span>
 						</a>
 					</li>
 					<li>
 						<a href="presensi.php" class="nav-link px-0 align-middle">
-							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Presensi</span> 
+							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Presensi</span>
 						</a>
 					</li>
 				</ul>
@@ -55,36 +55,35 @@
 			</div>
 		</div>
 		<div class="col">
-			<h3>Pengajuan Surat Keterangan</h3>
-			<div class="form-group">
-				<div class="form-row">
-					<div class="col mt-3" style="margin-left: 100px; margin-right: 100px;">
-						<div class="row border-dark border w-100" onclick="changeClass(this)" style="border-width: 1px !important; border-radius: 20px; padding-bottom: 20px;">
-							<div class="col-sm-8 pl-3 mt-3 mb-3">
-								<p class="font-weight-bold" id="tes">
-									Berkas Transkrip<br><small class="font-weight-light">Klik untuk melanjutkan ke form pengajuan</small>
-									<a href="#" class="stretched-link"></a>
-								</p>
+			<h4 class="mt-2">Form Tambah KRS</h4>
+			<form class="m-3" method="POST" action="action/proseskrs.php">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label>Mata Kuliah</label>
+							<select class="form-control" name="matkul">
+								<?php
+								session_start();
+								include 'action/koneksi.php';
+								$query = "SELECT * FROM matakuliah";
+
+								$hasil = mysqli_query($koneksi, $query);
+								$no = 0;
+								while ($data = mysqli_fetch_array($hasil)) {
+									$no++;
+									?>
+									<option value="<?php echo $data['IdMataKuliah']; ?>">
+										<?php echo $data['NamaMataKuliah']; ?></option>
+									<?php } ?>
+								</select>
 							</div>
-							<div class="col-sm-4 text-right">
-								<img src="images/yourself.png" style="width: 50%;">
-							</div> 
 						</div>
-						<div class="row border-dark border mr-3 mt-4 w-100" onclick="changeClass(this)" style="border-width: 1px !important; border-radius: 20px; padding-bottom: 20px;">
-							<div class="col-sm-8 pl-3 mt-3 mb-3">
-								<p class="font-weight-bold">
-									Cuti/Transfer/Undur Diri<br><small class="font-weight-light">Klik untuk melanjutkan ke form pengajuan</small>
-									<a href="#" class="stretched-link"></a>
-								</p>
-							</div>
-							<div class="col-sm-4 text-right">
-								<img src="images/someone.png" style="width: 50%;">
-							</div>
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-primary" name="submit">Kirim Ajuan</button>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
-	</div>
-</body>
-</html>
+	</body>
+	</html>

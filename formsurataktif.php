@@ -17,24 +17,22 @@
 				</a>
 				<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
 					<li class="nav-item">
-						<a href="#" class="nav-link align-middle px-0">
+						<a href="krs.php" class="nav-link align-middle px-0">
 							<i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Kartu Rencana Studi</span>
 						</a>
 					</li>
-					<li>
-						<a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-							<i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Transkrip</span> 
+					<li class="nav-item">
+						<a href="transkrip.php" class="nav-link align-middle px-0">
+							<i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Transkrip</span>
 						</a>
-						<ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-						</ul>
 					</li>
 					<li>
-						<a href="#" class="nav-link px-0 align-middle">
+						<a href="berkas.php" class="nav-link px-0 align-middle">
 							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Berkas</span> 
 						</a>
 					</li>
 					<li>
-						<a href="ok" class="nav-link px-0 align-middle">
+						<a href="presensi.php" class="nav-link px-0 align-middle">
 							<i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Presensi</span> 
 						</a>
 					</li>
@@ -92,11 +90,12 @@
 								<option value="3">3</option>
 								<option value="4">4</option>
 								<option value="5">6</option>
-								<option value="3">3</option>
-								<option value="3">3</option>
-								<option value="3">3</option>
-								<option value="3">3</option>
-
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
 							</select>
 						</div>
 					</div>
@@ -106,47 +105,35 @@
 							<input type="email" class="form-control" placeholder="email">
 						</div>
 					</div>
-					<h5>Form Perusahaan</h5>
+					<h5>Form Orang Tua</h5>
+					<div class="col-md-6 mt-2">
+						<div class="form-group">
+							<label>Nama Lengkap Orang Tua</label>
+							<input type="text" class="form-control" name="namaortu" placeholder="Nama Lengkap Orang Tua">
+						</div>
+					</div>
 					<div class="col-md-6 mt-2">
 						<div class="form-group">
 							<label>Instansi / Perusahaan</label>
-							<input type="text" class="form-control" name="instansi" placeholder="Nama Instansi atau Perusahaan">
-						</div>
-					</div>
-					<div class="col-md-6 mt-2">
-						<div class="form-group">
-							<label>Bagian / Divisi</label>
-							<input type="text" class="form-control" name="divisi" placeholder="Bagian atau divisi">
+							<input type="text" class="form-control" name="instansi" placeholder="Nama Perusahaan">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<label>Alamat</label>
-							<input type="text" class="form-control" name="alamatPerusahaan" placeholder="Alamat Perusahaan">
+							<label>Nomor Pegawai</label>
+							<input type="text" class="form-control" name="nomorpegawai" placeholder="Nomor Pegawai">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<label>Nomor Kontak</label>
-							<input type="text" class="form-control" name="nomorkontak" placeholder="Nomor Kontak">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label>Keperluan</label>
-							<input type="text" class="form-control" name="keperluan">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label>Judul Penelitian</label>
-							<input type="text" class="form-control" name="judul">
+							<label>Pangkat / Golongan</label>
+							<input type="text" class="form-control" name="pangkat" placeholder="Pangkat atau Golongan">
 						</div>
 					</div>
 					<div class="col-md-12">
 						<div class="form-group">
-							<label>Tanggal Dimulai</label>
-							<input type="date" class="form-control" name="tanggalmulai">
+							<label>Keperluan</label>
+							<input type="text" class="form-control" name="keperluan" placeholder="Keperluan Pengajuan">
 						</div>
 					</div>
 					<div class="col-md-12">
